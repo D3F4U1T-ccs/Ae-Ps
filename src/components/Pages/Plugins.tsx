@@ -208,42 +208,8 @@ function Plugins() {
       <h1 className="text-3xl font-bold text-white mb-6">Available Plugins</h1>
 
       <div className="flex flex-col md:flex-row gap-6 items-start">
-        <div className="md:w-3/4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {plugins.map((plugin) => (
-            <div
-              key={plugin.name}
-              className="bg-slate-800 rounded-xl shadow-md hover:shadow-cyan-500/20 transition duration-300"
-            >
-              <img
-                src={plugin.img}
-                alt={plugin.name}
-                className="w-full h-40 object-cover rounded-t-xl"
-              />
-              <div className="p-4">
-                <h3 className="text-xl font-semibold text-white mb-2">
-                  {plugin.name}
-                </h3>
-                <ul className="text-slate-300 text-sm list-disc list-inside mb-4">
-                  {plugin.description.map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))}
-                </ul>
-                <a
-                  href={plugin.href}
-                  target="_blank"
-                  className="block text-center bg-cyan-600 hover:bg-cyan-500 text-white py-2 px-4 rounded-md transition"
-                >
-                  Download →
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
 
-
-
-
-        <div className="md:w-1/4 p-4 bg-slate-800 rounded-lg text-white shadow-md self-start">
+        <div className=" order-1 md:order-2 md:w-1/4 p-4 bg-slate-800 rounded-lg text-white shadow-md self-start">
           <h2 className="text-xl font-bold mb-4 underline underline-offset-4">Plugins List</h2>
           <ul className="space-y-2 text-sm">
             <li>1. Deep Glow</li>
@@ -278,6 +244,43 @@ function Plugins() {
             </ul>
           </div>
         </div>
+
+        <div className=" order-2 md:order-1 md:w-3/4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {plugins.map((plugin) => (
+            <div
+              key={plugin.name}
+              className="bg-slate-800 rounded-xl shadow-md hover:shadow-cyan-500/20 transition duration-300"
+            >
+              <img
+                src={plugin.img}
+                alt={plugin.name}
+                className="w-full h-40 object-cover rounded-t-xl"
+              />
+              <div className="p-4">
+                <h3 className="text-xl font-semibold text-white mb-2">
+                  {plugin.name}
+                </h3>
+                <ul className="text-slate-300 text-sm list-disc list-inside mb-4">
+                  {plugin.description.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+                <a
+                  href={plugin.href}
+                  target="_blank"
+                  className="block text-center bg-cyan-600 hover:bg-cyan-500 text-white py-2 px-4 rounded-md transition"
+                >
+                  Download →
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+
+
+
+        {/* Навигация  */}
+
       </div>
     </div>
   );
